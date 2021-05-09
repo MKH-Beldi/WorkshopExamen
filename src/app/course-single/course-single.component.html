@@ -1,0 +1,32 @@
+<div class="card  mb-3" *ngIf="courseChild.public == isPublicChild || isPublicChild == false">
+  <div class="card text-center">
+    <h5 class="card-header" [ngClass]="getCategoryColor()">{{courseChild.category}}</h5>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="card-img-top mt-2 ml-2 mb-2 " src="assets/courses/course.jpg" alt="Course image">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-9">
+            <h5 class="card-title">{{ courseChild.title }}</h5>
+          </div>
+          <div class="col-3">
+                <p [ngStyle]="{color: getRecommendColor()}" *ngIf="courseChild.recommend" class="btn btn-light h5" (click)="sendRecommendNotif()">recommend {{ courseChild.recommend }}</p>
+            <p *ngIf="courseChild.recommend == 0" class="btn btn-light" (click)="sendRecommendNotif()"><small>not recommend yet</small></p>
+          </div>
+        </div>
+
+        <span class="card-text ">Difficulty : {{ courseChild.difficulty }}</span>
+        <p class="card-text mt-1">{{ courseChild.summary }}</p>
+        <p class="card-text">Created by {{ courseChild.author }} (<small class="text-muted"> release date {{ courseChild.releaseDate | date }}</small> )</p>
+        <p class="card-text" *ngIf="courseChild.lastUpdated"><small>Last updated {{ courseChild.lastUpdated | date:'medium' }} </small></p>
+        <p class="card-text" *ngIf="courseChild.public">Note : this course is public</p>
+        <p class="card-text" *ngIf="!courseChild.public">Note : this course is private</p>
+        <a [routerLink]="['edit', courseChild.id]" class="btn btn-primary">Edit</a>
+        <button class="btn btn-danger ml-2" (click)="sendDeleteNotif()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

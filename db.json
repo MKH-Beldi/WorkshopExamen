@@ -1,0 +1,76 @@
+{
+  "courses": [
+    {
+      "category": "Development",
+      "title": "Build Your First Web Pages With HTML and",
+      "summary": "are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
+      "author": "Emily Reese",
+      "releaseDate": "2020-01-10",
+      "lastUpdated": "2021-05-07T20:20:29.367Z",
+      "difficulty": "Hard",
+      "recommend": 7,
+      "public": false,
+      "id": 1
+    },
+    {
+      "category": "Cloud Computing",
+      "title": "Build Your First Web Pages With HTML and CSS",
+      "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
+      "author": "Emily Reese",
+      "releaseDate": "2020-01-09",
+      "lastUpdated": "2021-05-07T19:24:45.494Z",
+      "difficulty": "Hard",
+      "recommend": 29,
+      "public": true,
+      "id": 2
+    },
+    {
+      "category": "Project Manager",
+      "title": "Build Your First Web Pages With HTML and CSS",
+      "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
+      "author": "Emily Reese",
+      "releaseDate": "2020-01-01",
+      "lastUpdated": "2020-01-15",
+      "difficulty": "Medium",
+      "recommend": 8,
+      "public": true,
+      "id": 3
+    },
+    {
+      "category": "Cloud Computing",
+      "title": "Build Your First Web Pages With HTML and CSS",
+      "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
+      "author": "Emily Reese",
+      "releaseDate": "2020-01-01",
+      "lastUpdated": "2021-05-07T21:17:03.085Z",
+      "difficulty": "Easy",
+      "recommend": 35,
+      "public": false,
+      "id": 4
+    },
+    {
+      "category": "Marketing",
+      "title": "Learn About Agile Project Management and SCRUM",
+      "summary": "We live in an era where businesses operate in an environment of incredible technological innovation and where customers have more choice than ever before.",
+      "author": "Patrick O'Malley",
+      "releaseDate": "2019-01-01",
+      "difficulty": "Hard",
+      "recommend": 22,
+      "public": false,
+      "id": 5,
+      "lastUpdated": "2021-05-07T23:06:19.529Z"
+    },
+    {
+      "category": "Development",
+      "title": "Learn Programming With JavaScript",
+      "summary": "To create computer programs or build the app of your dreams, you need to know how to code in a programming language. Apps rely on data and logic to make their magic happen.",
+      "author": "Olga Volkova",
+      "releaseDate": "1991-01-01",
+      "difficulty": "Easy",
+      "recommend": 12,
+      "id": 6,
+      "lastUpdated": "2021-05-07T23:26:22.804Z",
+      "public": true
+    }
+  ]
+}
