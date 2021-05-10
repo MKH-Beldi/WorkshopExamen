@@ -4,7 +4,8 @@
   </div>
   <div class="row g-0">
     <div class="col-md-4">
-      <img class="card-img-top mt-2 ml-2 mb-2 " src="assets/courses/course.jpg" alt="Course image">
+      <img class="card-img-top mt-2 ml-2 mb-2" style="width: 350px; height: 230px" *ngIf="courseChild.image" [src]="courseChild.image" alt="Course image">
+      <img class="card-img-top mt-2 ml-2 mb-2 " style="width: 350px; height: 230px" src="assets/courses/course.jpg" alt="Course image" *ngIf="courseChild.image == null">
     </div>
     <div class="col-md-8">
       <div class="card-body ">

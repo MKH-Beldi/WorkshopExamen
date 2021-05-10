@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Course} from '../model/course';
 import {HttpClient} from '@angular/common/http';
+import firebase from '@firebase/app';
+import '@firebase/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +35,32 @@ export class CoursesService {
 
   recommandCourse(id: number, value: number) {
     return this.http.patch(this.url + id, {
-      "recommend": value
+        'recommend': value
+      }
+    );
+  }
+
+  uploadFile(file: File) {
+    return new Promise(
+      (resolve, reject) => {
+        const uniqueName = Date.now().toString();
+        const upload = firebase.storage().ref()
+          .child('images/' + uniqueName + file.name)
+          .put(file);
+        upload.on(firebase.storage.TaskEvent.STATE_CHANGED,
+          () => {
+            console.log('UPLOADING...');
+          },
+          (error) => {
+            console.log('ERROR : ' + error);
+            reject();
+          },
+          () => {
+            const downloadURL = upload.snapshot.ref.getDownloadURL();
+            console.log(downloadURL);
+            resolve(downloadURL);
+          }
+        );
       }
     );
   }

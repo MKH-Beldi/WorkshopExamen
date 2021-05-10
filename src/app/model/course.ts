@@ -9,4 +9,5 @@ export class Course {
   difficulty: string;
   recommend: number;
   public: boolean;
+  image: string;
 }

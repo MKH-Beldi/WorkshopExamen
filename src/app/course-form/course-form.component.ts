@@ -13,6 +13,9 @@ export class CourseFormComponent implements OnInit {
   course: Course;
   id: string;
   isAddMode: boolean;
+  fileIsUploading = false;
+  fileIsUploaded = false;
+  fileUrl: string;
 
 
   constructor(private courseService: CoursesService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -33,14 +36,38 @@ export class CourseFormComponent implements OnInit {
   }
 
   addCourse() {
+    this.course.recommend = 0;
+    if (this.fileUrl && this.fileUrl !== '') {
+      this.course.image = this.fileUrl;
+    }
     this.courseService.addCourse(this.course).subscribe();
-    this.router.navigate(['/courses']);
+    this.router.navigate(['']);
   }
 
   editCourse() {
     const dateTime = new Date();
     this.course.lastUpdated = dateTime;
+    if (this.fileUrl && this.fileUrl !== '') {
+      this.course.image = this.fileUrl;
+    }
     this.courseService.updateCourse(+this.id, this.course).subscribe();
     this.router.navigate(['/courses']);
   }
+
+  onUploadFile(file: File) {
+    this.fileIsUploading = true;
+    this.courseService.uploadFile(file).then(
+      (url: string) => {
+        this.fileUrl = url;
+        this.fileIsUploaded = true;
+        this.fileIsUploading = false;
+      }
+    );
+  }
+
+  changeFiles(event) {
+    this.onUploadFile(event.target.files[0]);
+  }
+
+
 }

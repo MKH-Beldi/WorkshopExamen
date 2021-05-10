@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Course} from '../model/course';
 import {CoursesService} from '../shared/courses.service';
 import {Router} from '@angular/router';
+import firebase from '@firebase/app';
+import '@firebase/storage';
 
 
 @Component({
@@ -45,6 +47,17 @@ export class CourseListComponent implements OnInit {
   }
 
   onDeleteCourse(course: Course) {
+    if (course.image) {
+      const storageRef = firebase.storage().refFromURL(course.image);
+      storageRef.delete().then(
+        () => {
+          console.log('Image removed!');
+        },
+        (error) => {
+          console.log('Could not remove Image! : ' + error);
+        }
+      );
+    }
     const idCourse = this.courses.indexOf(course);
     this.coursesService.deleteCourse(course.id).subscribe(
       () => {

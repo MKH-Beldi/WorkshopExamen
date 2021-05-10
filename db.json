@@ -2,27 +2,29 @@
   "courses": [
     {
       "category": "Development",
-      "title": "Build Your First Web Pages With HTML and",
+      "title": "Build Your First Web Pages With HTML and CSS",
       "summary": "are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
       "author": "Emily Reese",
       "releaseDate": "2020-01-10",
-      "lastUpdated": "2021-05-07T20:20:29.367Z",
+      "lastUpdated": "2021-05-10T23:12:51.170Z",
       "difficulty": "Hard",
       "recommend": 7,
       "public": false,
-      "id": 1
+      "id": 1,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F16206883693231_eTuCOcn_u09KDIkEKoOhZQ.jpeg?alt=media&token=5a3f064b-6729-4308-af8a-2f5b681558c8"
     },
     {
       "category": "Cloud Computing",
-      "title": "Build Your First Web Pages With HTML and CSS",
-      "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
-      "author": "Emily ReeseSS",
-      "releaseDate": "2020-01-09",
-      "lastUpdated": "2021-05-09T22:59:07.682Z",
-      "difficulty": "Hard",
+      "title": "Kick Start Your MVC Application With ASP.NET Core",
+      "summary": "The .NET Core development platform continues to grow in popularity across the globe, as businesses continue to discover and come to rely on the power and flexibility it provides. ",
+      "author": "Andrew Jensen",
+      "releaseDate": "2018-07-11",
+      "lastUpdated": "2021-05-10T22:49:37.102Z",
+      "difficulty": "Easy",
       "recommend": 29,
       "public": true,
-      "id": 2
+      "id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620686974262net-MVC.png?alt=media&token=b6750870-8764-4d0b-9d82-e24a8ec88c71"
     },
     {
       "category": "Project Manager",
@@ -32,33 +34,21 @@
       "releaseDate": "2020-01-01",
       "lastUpdated": "2020-01-15",
       "difficulty": "Medium",
-      "recommend": 8,
+      "recommend": 9,
       "public": true,
       "id": 3
     },
     {
       "category": "Cloud Computing",
-      "title": "Build Your First Web Pages With HTML and CSS",
+      "title": "Optimize your website with DevTools",
       "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
-      "author": "Emily Reese",
-      "releaseDate": "2020-01-01",
-      "lastUpdated": "2021-05-07T21:17:03.085Z",
-      "difficulty": "Easy",
+      "author": "Aurélien Vaast",
+      "releaseDate": "2019-12-11",
+      "lastUpdated": "2021-05-10T20:27:09.806Z",
+      "difficulty": "Medium",
       "recommend": 35,
-      "public": false,
+      "public": true,
       "id": 4
-    },
-    {
-      "category": "Marketing",
-      "title": "Learn About Agile Project Management and SCRUM",
-      "summary": "We live in an era where businesses operate in an environment of incredible technological innovation and where customers have more choice than ever before.",
-      "author": "Patrick O'Malley",
-      "releaseDate": "2019-01-01",
-      "difficulty": "Hard",
-      "recommend": 22,
-      "public": false,
-      "id": 5,
-      "lastUpdated": "2021-05-07T23:06:19.529Z"
     },
     {
       "category": "Development",
@@ -66,11 +56,91 @@
       "summary": "To create computer programs or build the app of your dreams, you need to know how to code in a programming language. Apps rely on data and logic to make their magic happen.",
       "author": "Olga Volkova",
       "releaseDate": "1991-01-01",
-      "difficulty": "Easy",
+      "difficulty": "Medium",
       "recommend": 12,
       "id": 6,
-      "lastUpdated": "2021-05-07T23:26:22.804Z",
+      "lastUpdated": "2021-05-10T20:37:19.495Z",
       "public": true
+    },
+    {
+      "category": "Cloud Computing",
+      "title": "Docker and Kubernetes: The Complete Guide",
+      "summary": "Build, test, and deploy Docker applications with Kubernetes while learning production-style development workflows.",
+      "author": "Stephen Grider",
+      "releaseDate": "2011-02-10",
+      "difficulty": "Hard",
+      "public": true,
+      "id": 7
+    },
+    {
+      "category": "Development",
+      "title": "Learn Programming With Python",
+      "summary": "Do you already know some Python and want to dive in deeper? Want to turn your “hello world” programs into useful applications? This course is for you!",
+      "author": "Will Alexander",
+      "releaseDate": "2020-03-27",
+      "difficulty": "Hard",
+      "recommend": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620686431644python-definition.jpg?alt=media&token=deadd9e9-b102-4f74-b0e3-aff678452208",
+      "id": 8,
+      "lastUpdated": "2021-05-10T22:40:33.902Z",
+      "public": true
+    },
+    {
+      "category": "Project Manager",
+      "title": "Understand the role of Product Manager",
+      "author": "Mila Paul",
+      "releaseDate": "2015-01-10",
+      "difficulty": "Hard",
+      "public": true,
+      "summary": "Product management is a relatively new role in the organization, yet one that is now regarded as one of critical importance!",
+      "recommend": 0,
+      "id": 9
+    },
+    {
+      "category": "Project Manager",
+      "title": "Organize your data in a spreadsheet",
+      "summary": "Hi, I'm Emily! I've been harnessing the power of spreadsheets for the last twenty years and have taught many others how to as well.",
+      "author": "Emily Kund",
+      "releaseDate": "2021-05-06",
+      "difficulty": "Hard",
+      "recommend": 7,
+      "id": 10
+    },
+    {
+      "category": "Marketing",
+      "title": "Drive Traffic to Your Website With Search Engine Optimization (SEO)",
+      "summary": "My name is Mike, and I am a digital marketer and SEO consultant for OpenClassrooms. I created this course with Léo Sider, an SEO consultant based in France,",
+      "author": "Emily ReeseS",
+      "releaseDate": "2019-05-10",
+      "difficulty": "Hard",
+      "recommend": 0,
+      "id": 11,
+      "public": true,
+      "lastUpdated": "2021-05-10T23:04:50.068Z",
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620687437592t%C3%A9l%C3%A9chargement%20(1).png?alt=media&token=6bb17002-1032-4c02-ac3b-ade397afa57d"
+    },
+    {
+      "category": "Marketing",
+      "title": "Manage Your Customer Relationships With CRM",
+      "summary": "CRM (or customer relationship management) is much more than just another three-letter acronym. It’s the lifeblood of your business",
+      "author": "Emily Reese",
+      "releaseDate": "2010-05-25",
+      "difficulty": "Medium",
+      "recommend": 0,
+      "id": 12
+    },
+    {
+      "category": "Marketing",
+      "title": "Manage Your Customer Relationships With CRM",
+      "summary": "Manage Your Customer Relationships With CRM Track Leads, Close Opportunities & Get Accurate Forecasts",
+      "author": "Emily ReeseS",
+      "releaseDate": "2012-03-01",
+      "difficulty": "Medium",
+      "public": true,
+      "recommend": 1,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620687851437crm-definition.jpg?alt=media&token=e05aca84-0d2b-405a-a855-9b9887e82951",
+      "id": 13,
+      "lastUpdated": "2021-05-10T23:04:13.191Z"
     }
   ]
 }
