@@ -19,6 +19,10 @@ export class CourseListComponent implements OnInit {
   filtreByCategory = 'none';
   filtreByDifficulty = 'none';
   difficultys = ['Easy', 'Medium', 'Hard'];
+  searchValue: string;
+  sortValue = 'none';
+  sortItem = ['category', 'title', 'difficulty', 'recommend', 'author', 'lastUpdated'];
+  reverse: boolean;
 
 
   constructor(private coursesService: CoursesService, private router: Router) {
@@ -33,6 +37,7 @@ export class CourseListComponent implements OnInit {
         this.copyCoursesF2 = this.courses;
       }
     );
+    this.reverse = false;
   }
 
   onNewCourse() {
@@ -52,6 +57,7 @@ export class CourseListComponent implements OnInit {
     console.log(this.filtreByCategory);
     this.filtreByDifficulty = 'none';
     if (this.filtreByCategory === 'none') {
+      this.copyCoursesF2 = this.copyCoursesF1;
       return this.courses = this.copyCoursesF1;
     } else {
       this.courses = this.copyCoursesF1.filter(
@@ -81,6 +87,7 @@ export class CourseListComponent implements OnInit {
         this.courses[idCourse].recommend = value;
       }
     );
+
   }
 
 }
