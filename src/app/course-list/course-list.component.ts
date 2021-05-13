@@ -33,7 +33,6 @@ export class CourseListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.filtreByDifficulty);
     this.coursesService.getAll().subscribe(
       (data: Course[]) => {
         this.courses = data;
@@ -45,10 +44,8 @@ export class CourseListComponent implements OnInit {
     this.authService.isAuth().then(
       (auth: boolean) => {
         this.isAuth = auth;
-        console.log('auth ' + this.isAuth);
       }
     );
-    console.log('test' + this.isAuth);
   }
 
   onNewCourse() {

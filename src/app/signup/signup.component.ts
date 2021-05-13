@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../shared/auth.service';
 import {Router} from '@angular/router';
 
@@ -8,13 +8,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
   email: string;
   password: string;
   passwordConfirm: string;
   errorMessage: string;
 
-  constructor(private authService: AuthService,
-              private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }

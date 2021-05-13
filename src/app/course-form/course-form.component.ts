@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Course} from '../model/course';
 import {CoursesService} from '../shared/courses.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-course-form',
@@ -20,6 +21,7 @@ export class CourseFormComponent implements OnInit {
   fileUrl: string;
   categories = ['Development', 'Cloud Computing', 'Project Manager', 'Marketing'];
   difficulties = ['Easy', 'Medium', 'Hard'];
+  errorFile: string;
 
 
   constructor(private courseService: CoursesService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -72,4 +74,11 @@ export class CourseFormComponent implements OnInit {
     this.onUploadFile(event.target.files[0]);
   }
 
+ dateControl(dateIn: FormControl) {
+    const dateValue: Date = dateIn.value;
+    const dateNow = new Date();
+    if (dateValue > dateNow) {
+      dateIn.setErrors({...dateIn.errors, 'date before': true});
+    }
+  }
 }

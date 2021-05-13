@@ -1,21 +1,23 @@
 <div class="container mt-3 mb-3">
 
-  <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+  <div class="d-flex flex-row bd-highlight justify-content-center">
+
     <div class="p-2 bd-highlight">
       <label class="col-form-label text-lg-left btn btn-success bi-search" style="cursor: unset"> Search</label>
+
     </div>
-
-
 
     <div class="p-2 w-50 bd-highlight">
       <input class="form-control" type="text" placeholder="   Enter course, author or keywords . . ." id="search"
              [(ngModel)]="searchValue">
     </div>
+
   </div>
 
-  <div class="d-flex flex-row bd-highlight mb-3">
+  <div class="d-flex flex-row bd-highlight justify-content-center">
     <div class="p-2">
-      <label class="form-check-label text-lg-left btn btn-danger" style="cursor: unset"><i class="bi bi-filter"></i> Filtre</label>
+      <label class="form-check-label text-lg-left btn btn-danger" style="cursor: unset"><i class="bi bi-filter"></i>
+        Filtre</label>
     </div>
     <div class="p-2">
       <select class="form-select btn btn-outline-success" aria-label="Category"
@@ -28,7 +30,7 @@
     </div>
 
     <div class="p-2">
-      <select class="form-select btn btn-outline-info" aria-label="Difficulty"
+      <select class="form-select btn btn-outline-info" aria-label="Category"
               name="filtreByDifficulty"
               [(ngModel)]="filtreByDifficulty"
               (change)="onFiltreByDifficulty()">
@@ -46,9 +48,11 @@
     </div>
   </div>
 
-  <div class="d-flex flex-row bd-highlight mb-3">
+  <div class="d-flex flex-row bd-highlight justify-content-center">
+
     <div class="p-2">
-      <label class="form-check-label mr-3 text-lg-left btn btn-dark" style="cursor: unset;"><i class="bi bi-sort-down"></i> Sort</label>
+      <label class="form-check-label mr-3 text-lg-left btn btn-dark" style="cursor: unset;"><i
+        class="bi bi-sort-down"></i> Sort</label>
     </div>
     <div class="p-2">
       <select class="form-select btn btn-outline-primary" style="" aria-label="sortItem"
@@ -66,12 +70,16 @@
       </div>
     </div>
   </div>
-  <div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="d-flex flex-row bd-highlight justify-content-center">
     <div class="p-2">
-      <a class="btn btn-success" role="button"  routerLink="new" ><i class="bi bi-plus-square"></i> Create course</a>
+      <a class="btn btn-success" role="button" routerLink="new"><i class="bi bi-plus-square"></i> Create course</a>
     </div>
   </div>
 </div>
+
+
+
 <div class="container">
   <div class="row">
     <app-course-single *ngFor="let object of courses | searchFiltre: searchValue | sortBy:sortValue:reverse"

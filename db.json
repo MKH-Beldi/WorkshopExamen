@@ -3,10 +3,10 @@
     {
       "category": "Development",
       "title": "Build Your First Web Pages With HTML and CSS",
-      "summary": "are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
+      "summary": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500",
       "author": "Emily Reese",
       "releaseDate": "2020-01-10",
-      "lastUpdated": "2021-05-13T03:32:17.670Z",
+      "lastUpdated": "2021-05-13T20:48:39.227Z",
       "difficulty": "Medium",
       "recommend": 11,
       "public": false,
@@ -39,18 +39,6 @@
       "id": 3
     },
     {
-      "category": "Cloud Computing",
-      "title": "Optimize your website with DevTools",
-      "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
-      "author": "Aurélien Vaast",
-      "releaseDate": "2019-12-11",
-      "lastUpdated": "2021-05-10T20:27:09.806Z",
-      "difficulty": "Medium",
-      "recommend": 35,
-      "public": true,
-      "id": 4
-    },
-    {
       "category": "Development",
       "title": "Learn Programming With JavaScript",
       "summary": "To create computer programs or build the app of your dreams, you need to know how to code in a programming language. Apps rely on data and logic to make their magic happen.",
@@ -69,8 +57,10 @@
       "author": "Stephen Grider",
       "releaseDate": "2011-02-10",
       "difficulty": "Hard",
-      "public": true,
-      "id": 7
+      "recommend": 1,
+      "public": false,
+      "id": 7,
+      "lastUpdated": "2021-05-13T10:32:46.574Z"
     },
     {
       "category": "Development",
@@ -141,6 +131,16 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620687851437crm-definition.jpg?alt=media&token=e05aca84-0d2b-405a-a855-9b9887e82951",
       "id": 13,
       "lastUpdated": "2021-05-10T23:04:13.191Z"
+    },
+    {
+      "title": "Le Lorem Ipsum en conte",
+      "summary": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique infor",
+      "author": "Lorem title",
+      "releaseDate": "2005-02-21",
+      "public": false,
+      "recommend": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620902048290net-MVC.png?alt=media&token=b7cf32fb-9ae9-49a1-a463-e381e725e264",
+      "id": 14
     }
   ]
 }

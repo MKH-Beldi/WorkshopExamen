@@ -13,12 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CourseSingleViewComponent } from './course-single-view/course-single-view.component';
-import { MultiSearchComponent } from './multi-search/multi-search.component';
 import { SearchFiltrePipe } from './pipe/search-filtre.pipe';
 import { SortByPipe } from './pipe/sort-by.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
+
 
 
 
@@ -32,11 +31,9 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     SigninComponent,
     SignupComponent,
     NotFoundComponent,
-    CourseSingleViewComponent,
-    MultiSearchComponent,
     SearchFiltrePipe,
     SortByPipe,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

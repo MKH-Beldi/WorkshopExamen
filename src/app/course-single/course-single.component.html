@@ -4,8 +4,8 @@
   </div>
   <div class="row g-0">
     <div class="col-md-4">
-      <img class="card-img-top mt-2 ml-2 mb-2" style="width: 350px; height: 230px" *ngIf="courseChild.image" [src]="courseChild.image" alt="Course image">
-      <img class="card-img-top mt-2 ml-2 mb-2 " style="width: 350px; height: 230px" src="assets/courses/course.jpg" alt="Course image" *ngIf="courseChild.image == null">
+      <img class="card-img-bottom me-3" style="width: 350px; height: 230px" *ngIf="courseChild.image" [src]="courseChild.image" alt="Course image">
+      <img class="card-img-bottom me-3" style="width: 350px; height: 230px" src="assets/courses/course.jpg" alt="Course image" *ngIf="courseChild.image == null">
     </div>
     <div class="col-md-8">
       <div class="card-body ">
@@ -15,14 +15,22 @@
           </div>
           <div class="col-3">
                 <p [ngStyle]="{color: getRecommendColor()}" *ngIf="courseChild.recommend && isAuthChild" class="btn btn-light h5" (click)="sendRecommendNotif()"><i class="bi bi-plus-circle-fill"></i> Recommend {{ courseChild.recommend }}</p>
+            <p [ngStyle]="{color: getRecommendColor()}" *ngIf="courseChild.recommend && !isAuthChild" class="btn btn-light h5" style="cursor: unset;">Recommend {{ courseChild.recommend }}</p>
             <p *ngIf="courseChild.recommend == 0 && isAuthChild" class="btn btn-light" (click)="sendRecommendNotif()"><i class="bi bi-plus-circle"></i><small> Not recommend yet </small></p>
+            <p *ngIf="courseChild.recommend == 0 && !isAuthChild" class="btn btn-light" style="cursor: unset;"><small> Not recommend yet </small></p>
           </div>
         </div>
 
         <span class="card-text "><i class="bi bi-award-fill"></i> Difficulty : {{ courseChild.difficulty }}</span>
-        <p class="card-text mt-1"><i class="bi bi-star-fill"></i> Summary : {{ courseChild.summary }}</p>
-        <p class="card-text"><i class="bi bi-people-fill"></i> Created by {{ courseChild.author }} (<small class="text-muted"> release date {{ courseChild.releaseDate | date }}</small> )</p>
-        <p class="card-text" *ngIf="courseChild.lastUpdated"><small><i class="bi bi-calendar-check-fill"></i> Last updated {{ courseChild.lastUpdated | date:'medium' }} </small></p>
+        <p class="card-text mt-2"><i class="bi bi-star-fill"></i> Summary : {{ courseChild.summary }}</p>
+        <div class="row mb-2">
+          <div class="col-6">
+            <p class="card-text d-inline"><i class="bi bi-people-fill"></i> Created by {{ courseChild.author }} (<small class="text-muted"> release date {{ courseChild.releaseDate | date }}</small> )</p>
+          </div>
+          <div class="col-6">
+            <p class="card-text d-inline" *ngIf="courseChild.lastUpdated"><small><i class="bi bi-calendar-check-fill"></i> Last updated {{ courseChild.lastUpdated | date:'medium' }} </small></p>
+        </div>
+        </div>
         <p class="card-text" *ngIf="courseChild.public"><i class="bi bi-tag"></i> Note : this course is public</p>
         <p class="card-text" *ngIf="!courseChild.public"><i class="bi bi-tag"></i> Note : this course is private</p>
 

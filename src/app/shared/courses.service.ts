@@ -49,15 +49,16 @@ export class CoursesService {
           .put(file);
         upload.on(firebase.storage.TaskEvent.STATE_CHANGED,
           () => {
-            console.log('UPLOADING...');
+            console.log('IMAGE UPLOADING...');
           },
           (error) => {
             console.log('ERROR : ' + error);
-            reject();
+            reject(error);
           },
           () => {
             const downloadURL = upload.snapshot.ref.getDownloadURL();
             resolve(downloadURL);
+            console.log('IMAGE UPLOADED OK!');
           }
         );
       }

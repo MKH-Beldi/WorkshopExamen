@@ -6,7 +6,6 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class SortByPipe implements PipeTransform {
 
   transform(courses: any[], sortBy: any, order: boolean): any {
-    console.log(order);
     if (!courses) {
       return 0;
     }

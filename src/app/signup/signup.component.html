@@ -1,6 +1,9 @@
 <div class="container mt-3">
+
   <h2><i class="bi bi-person-plus-fill"></i> SIGN UP</h2>
+
   <form #f="ngForm">
+
     <div class="mb-3">
       <label for="email" class="form-label">Email:<span style="color: red">*</span></label>
       <input type="text"
@@ -14,6 +17,7 @@
              required
              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
     </div>
+
     <div *ngIf="m.invalid && (m.dirty || m.touched)"
          class="alert alert-danger">
       <div *ngIf="m.errors.required">
@@ -23,9 +27,7 @@
         - Email is invalid
       </div>
     </div>
-<form>
 
-</form>
     <div class="mb-3">
       <label for="password" class="form-label">Password:<span style="color: red">*</span></label>
       <input type="password"
@@ -38,6 +40,7 @@
              required
              minlength="6">
     </div>
+
     <div *ngIf="p.invalid && (p.dirty || p.touched)"
          class="alert alert-danger">
       <div *ngIf="p.errors.required">
@@ -49,7 +52,7 @@
     </div>
 
     <div class="mb-3">
-      <label for="passwordConfirm" class="form-label">Password:<span style="color: red">*</span></label>
+      <label for="passwordConfirm" class="form-label">Password confirm:<span style="color: red">*</span></label>
       <input type="password"
              id="passwordConfirm"
              name="passwordConfirm"
@@ -61,9 +64,9 @@
              ngValidateEqual="password">
     </div>
 
-    <div *ngIf="(pc.dirty || pc.touched) && pc.invalid">
+    <div *ngIf="(pc.dirty || pc.touched ) && pc.invalid">
       <div class="alert alert-danger" *ngIf="pc.hasError('notEqual') && p.valid">
-        Passwords Don't Match
+        - Passwords don't match
       </div>
     </div>
 
@@ -74,8 +77,10 @@
               [disabled]="f.invalid"><i class="bi bi-person-plus-fill"></i> SIGN UP
       </button>
     </div>
+  </form>
+
     <div class="alert alert-danger" *ngIf="errorMessage">
       {{ errorMessage }}
     </div>
-  </form>
+
 </div>
