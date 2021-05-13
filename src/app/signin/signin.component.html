@@ -1,43 +1,62 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <h2>SIGN IN</h2>
-    <form #f="ngForm">
-      <div class="form-group">
-        <label for="email">Email:*</label>
-        <input type="text"
-               id="email"
-               name="email"
-               class="form-control"
-               [(ngModel)]="email"
-               #m="ngModel"
-               required
-               email>
+<div class="container mt-3">
+  <h2><i class="bi bi-box-arrow-in-right"></i> SIGN IN</h2>
+  <form #f="ngForm">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:<span style="color: red">*</span></label>
+      <input type="text"
+             id="email"
+             name="email"
+             placeholder="name@example.com"
+             class="form-control"
+             email
+             [(ngModel)]="email"
+             #m="ngModel"
+             required
+             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    </div>
+    <div *ngIf="m.invalid && (m.dirty || m.touched)"
+         class="alert alert-danger">
+      <div *ngIf="m.errors.required">
+        - Email is required
       </div>
-      <div [hidden]="m.valid || m.pristine"
-           class="alert alert-danger">
-        Email is required
+      <div *ngIf="m.errors.pattern">
+        - Email is invalid
       </div>
-      <div class="form-group">
-        <label for="password">Password:*</label>
-        <input type="password"
-               id="password"
-               name="password"
-               class="form-control"
-               [(ngModel)]="password"
-               #p="ngModel"
-               required
-               pattern="[0-9a-zA-Z]{6,}">
+    </div>
+    <form>
+
+    </form>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:<span style="color: red">*</span></label>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="At least 6 characters"
+             class="form-control"
+             [(ngModel)]="password"
+             #p="ngModel"
+             required
+             minlength="6">
+    </div>
+    <div *ngIf="p.invalid && (p.dirty || p.touched)"
+         class="alert alert-danger">
+      <div *ngIf="p.errors.required">
+        - Password is required
       </div>
-      <div [hidden]="p.valid || p.pristine"
-           class="alert alert-danger">
-        At least 6 characters
+      <div *ngIf="p.errors.minlength">
+        - At least 6 characters
       </div>
-      <button class="btn btn-primary"
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-success"
               type="submit"
               (click)="onSubmit()"
-              [disabled]="f.invalid" >SIGN IN</button>
-      <span class="text-danger ml-2">{{ errorMessage }}</span>
-    </form>
-
-  </div>
+              [disabled]="f.invalid"><i class="bi bi-box-arrow-in-right"></i> SIGN IN
+      </button>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+  </form>
 </div>

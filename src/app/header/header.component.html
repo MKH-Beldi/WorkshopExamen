@@ -1,30 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-  <div class="container">
-    <a class="navbar-brand" routerLink="courses">E-Course</a>
-    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="active" class="nav-item"><a routerLink="courses" class="nav-link">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav">
-        <li class="nav-item"><a routerLink="courses/new" class="nav-link">Add Course</a></li>
-      </ul>
-      <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-        <li>
-          <a routerLinkActive="active"  routerLink="auth/signup" class="mr-3" *ngIf="!isAuth">SIGN UP</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="courses"><i class="bi bi-journal-check"></i> E-Course</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="courses"><i class="bi bi-house"></i> Home</a>
         </li>
-        <li>
-          <a routerLinkActive="active"  routerLink="auth/signin" *ngIf="!isAuth">SIGN IN</a>
-        </li>
-        <li>
-          <a (click)="onSignOut()" *ngIf="isAuth" class="signout">SIGN OUT</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="courses/new"><i class="bi bi-plus-circle"></i> Course</a>
         </li>
       </ul>
     </div>
+    <div class="d-flex">
+      <a class="btn btn-warning fw-bold me-2" role="button" data-bs-toggle="button" routerLink="auth/signup" *ngIf="!isAuth"><i class="bi bi-person-plus-fill"></i> SIGN UP</a>
+      <a class="btn btn-warning fw-bold" role="button" data-bs-toggle="button" routerLink="auth/signin" *ngIf="!isAuth"><i class="bi bi-box-arrow-in-right"></i> SIGN IN</a>
+      <a class="btn btn-warning fw-bold signout" role="button" data-bs-toggle="button" *ngIf="isAuth" (click)="onSignOut()"><i class="bi bi-box-arrow-in-right"></i> SIGN OUT</a>
+    </div>
   </div>
 </nav>
-
-
-
-
-
-

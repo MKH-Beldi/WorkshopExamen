@@ -1,101 +1,139 @@
-<div class="container mt-2">
+<div class="container mt-3">
+
+  <h2 class="mb-3">Create new Course</h2>
+
   <form #f="ngForm">
-    <div class="form-group">
-      <label for="difficulty">Categorie</label>
-      <select class="form-control" id="Categorie" name="Categorie"
-              required
-              [(ngModel)]="course.category" #c="ngModel">
-        <option>Development</option>
-        <option>Marketing</option>
-        <option>Cloud Computing</option>
-        <option>Project Manager</option>
-      </select>
-    </div>
-    <div *ngIf="c.invalid && (c.dirty || c.touched)"
-         class="alert alert-danger">
-      <div *ngIf="c.errors.required">
-        * Category is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" name="title"
-             placeholder="Enter Title of the course"
-             required
-             minlength="6"
-             [(ngModel)]="course.title" #t="ngModel">
-    </div>
-    <div *ngIf="t.invalid && (t.dirty || t.touched)"
-         class="alert alert-danger">
-      <div *ngIf="t.errors.required">
-        * Title is required.
-      </div>
-      <div *ngIf="t.errors.minlength">
-        * Title must be at least 6 characters long.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="summary">Summary</label>
-      <textarea class="form-control" id="summary" name="summary" placeholder="Enter a summary of the course which contains between 10 and 200 letters"
+    <div class="mb-3 row">
+      <label for="category" class="col-sm-2 col-form-label" name="category">Category<span
+        style="color: red">*</span></label>
+      <div class="col-sm-2">
+        <select class="form-select" id="category" name="category"
                 required
-                minlength="10"
-                maxlength="200"
-                [(ngModel)]="course.summary" #s="ngModel"></textarea>
-    </div>
-    <div *ngIf="s.invalid && (s.dirty || s.touched)"
-         class="alert alert-danger">
-      <div *ngIf="s.errors.required">
-        * Summary is required.
-      </div>
-      <div *ngIf="s.errors.minlength">
-        * Summary of the course which contains between 10 and 50 letters.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" name="author"
-             required
-             [(ngModel)]="course.author" #a="ngModel">
-    </div>
-    <div *ngIf="a.invalid && (a.dirty || a.touched)"
-         class="alert alert-danger">
-      <div *ngIf="a.errors.required">
-        * Author is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="releaseDate">Release Date</label>
-      <input type="date" class="form-control" id="releaseDate" name="releaseDate"
-             required
-             [(ngModel)]="course.releaseDate" #rd="ngModel">
-    </div>
-    <div *ngIf="rd.invalid && (rd.dirty || rd.touched)"
-         class="alert alert-danger">
-      <div *ngIf="rd.errors.required">
-        * Release date is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="difficulty">Difficulty</label>
-      <select class="form-control" id="difficulty" name="difficulty"
-              required
-              [(ngModel)]="course.difficulty" #d="ngModel">>
-        <option>Easy</option>
-        <option>Medium</option>
-        <option>Hard</option>
-      </select>
-    </div>
-    <div *ngIf="d.invalid && (d.dirty || d.touched)"
-         class="alert alert-danger">
-      <div *ngIf="d.errors.required">
-        * Difficulty is required.
+                [(ngModel)]="categoriesSelect" #c="ngModel">
+          <option class="dropdown-item" disabled selected [ngValue]="undefined" *ngIf="isAddMode">Select an Option</option>
+          <option *ngFor="let object of categories" [ngValue]="object">{{ object }}</option>
+        </select>
+        <span *ngIf="c.invalid && (c.dirty || c.touched)">
+          <div *ngIf="c.errors.required" class="text-danger mt-1">
+            * Category is required
+          </div>
+        </span>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="releaseDate">Add image course</label>
-      <input type="file" (change)="changeFiles($event)" class="form-control" accept="image/*">
-      <p class="text-success" *ngIf="fileIsUploaded">File uploaded !</p>
+
+    <div class="mb-3 row">
+      <label for="title" class="col-sm-2 col-form-label" name="title">Title<span style="color: red">*</span></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" name="title"
+               placeholder="Enter the course title (at least 6 characters)"
+               required
+               minlength="6"
+               [(ngModel)]="course.title" #t="ngModel">
+        <span *ngIf="t.invalid && (t.dirty || t.touched)">
+          <div *ngIf="t.errors.required" class="text-danger mt-1">
+            * Title is required
+          </div>
+          <div *ngIf="t.errors.minlength" class="text-danger mt-1">
+             * Title must be at least 6 characters long
+          </div>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="mb-3 row">
+      <label for="summary" class="col-sm-2 col-form-label" name="summary">Summary<span
+        style="color: red">*</span></label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="summary" name="summary" style="height: 100px"
+                  placeholder="Enter the course summary (between 10 and 400 characters)"
+                  required
+                  minlength="10"
+                  maxlength="400"
+                  [(ngModel)]="course.summary" #s="ngModel">
+        </textarea>
+
+        <span *ngIf="s.invalid && (s.dirty || s.touched)">
+          <div *ngIf="s.errors.required" class="text-danger mt-1">
+            * Summary is required
+          </div>
+          <div *ngIf="s.errors.minlength" class="text-danger mt-1">
+             * Summary of the course which contains between 10 and 400 letters
+          </div>
+        </span>
+
+      </div>
+    </div>
+
+
+    <div class="mb-3 row">
+      <label for="author" class="col-sm-2 col-form-label" name="author">Author<span style="color: red">*</span></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="author" name="author"
+               placeholder="Enter the course author"
+               required
+               minlength="6"
+               [(ngModel)]="course.author" #a="ngModel">
+
+        <span *ngIf="a.invalid && (a.dirty || a.touched)">
+          <div *ngIf="a.errors.required" class="text-danger mt-1">
+            * Author is required
+          </div>
+          <div *ngIf="a.errors.minlength" class="text-danger mt-1">
+             * At least 6 characters
+          </div>
+        </span>
+
+      </div>
+    </div>
+
+
+    <div class="mb-3 row">
+      <label for="releaseDate" class="col-sm-2 col-form-label" name="releaseDate">Release date<span
+        style="color: red">*</span></label>
+      <div class="col-sm-2">
+        <input type="date" class="form-control" id="releaseDate" name="releaseDate"
+               placeholder="Enter the course author"
+               required
+               minlength="6"
+               [(ngModel)]="course.releaseDate" #rd="ngModel">
+
+        <span *ngIf="rd.invalid && (rd.dirty || rd.touched)">
+          <div *ngIf="rd.errors.required" class="text-danger mt-1">
+            * Release date is required.
+          </div>
+        </span>
+      </div>
+
+      <div class="col-sm-2">
+        <label for="difficulty" class="col-sm-2 col-form-label" name="difficulty">Difficulty<span
+          style="color: red">*</span></label>
+      </div>
+      <div class="col-sm-2">
+        <select class="form-select" aria-label="Default select example" id="difficulty" name="difficulty"
+                required
+                [(ngModel)]="difficultiesSelect" #d="ngModel">
+          <
+          <option class="dropdown-item" disabled selected [ngValue]="undefined">Select an Option</option>
+          <option *ngFor="let object of difficulties" [ngValue]="object">{{ object }}</option>
+        </select>
+
+        <span *ngIf="d.invalid && (d.dirty || d.touched)">
+          <div *ngIf="d.errors.required" class="text-danger mt-1">
+            * Difficulty is required.
+          </div>
+        </span>
+
+      </div>
+    </div>
+
+
+    <div class="mb-3 row">
+      <label for="image" class="col-sm-2 col-form-label" name="author">Image</label>
+      <div class="col-sm-6">
+        <input type="file" (change)="changeFiles($event)" class="form-control" id="image" accept="image/*">
+      </div>
     </div>
 
     <div class="form-check">
@@ -103,13 +141,16 @@
              [(ngModel)]="course.public">
       <label class="form-check-label" for="public">Public</label>
     </div>
+
     <div class="mt-3">
-      <button type="button"  class="btn btn-primary" (click)="addCourse()"
+      <button type="button" class="btn btn-success" (click)="addCourse()"
               [disabled]="f.invalid"
-              *ngIf="isAddMode">Add Course</button>
-      <button type="button"  class="btn btn-primary" (click)="editCourse()"
+              *ngIf="isAddMode"><i class="bi bi-plus-square"></i> Save Course
+      </button>
+      <button type="button" class="btn btn-success" (click)="editCourse()"
               [disabled]="f.invalid || fileIsUploading"
-              *ngIf="!isAddMode">EDIT Course</button>
+              *ngIf="!isAddMode"><i class="bi bi-pencil-square"></i> Edit course
+      </button>
     </div>
   </form>
 </div>

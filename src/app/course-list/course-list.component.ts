@@ -4,6 +4,7 @@ import {CoursesService} from '../shared/courses.service';
 import {Router} from '@angular/router';
 import firebase from '@firebase/app';
 import '@firebase/storage';
+import {AuthService} from '../shared/auth.service';
 
 
 @Component({
@@ -17,17 +18,18 @@ export class CourseListComponent implements OnInit {
   copyCoursesF1: Course[];
   copyCoursesF2: Course[];
   isPublic = false;
+  isAuth: boolean;
   categories = ['Development', 'Cloud Computing', 'Project Manager', 'Marketing'];
   filtreByCategory = 'none';
   filtreByDifficulty = 'none';
-  difficultys = ['Easy', 'Medium', 'Hard'];
+  difficulties = ['Easy', 'Medium', 'Hard'];
   searchValue: string;
   sortValue = 'none';
   sortItem = ['category', 'title', 'difficulty', 'recommend', 'author', 'lastUpdated'];
   reverse: boolean;
 
 
-  constructor(private coursesService: CoursesService, private router: Router) {
+  constructor(private coursesService: CoursesService, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -40,6 +42,13 @@ export class CourseListComponent implements OnInit {
       }
     );
     this.reverse = false;
+    this.authService.isAuth().then(
+      (auth: boolean) => {
+        this.isAuth = auth;
+        console.log('auth ' + this.isAuth);
+      }
+    );
+    console.log('test' + this.isAuth);
   }
 
   onNewCourse() {

@@ -9,6 +9,7 @@ import {Course} from '../model/course';
 export class CourseSingleComponent implements OnInit {
 
   @Input() courseChild: Course;
+  @Input() isAuthChild: boolean;
   @Input() isPublicChild: boolean;
   @Input() filtreByDifficultyChild: string;
   @Output() deleteEvent = new EventEmitter<Course>();

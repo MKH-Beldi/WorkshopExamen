@@ -12,10 +12,14 @@ export class CourseFormComponent implements OnInit {
 
   course: Course;
   id: string;
+  categoriesSelect;
+  difficultiesSelect;
   isAddMode: boolean;
   fileIsUploading = false;
   fileIsUploaded = false;
   fileUrl: string;
+  categories = ['Development', 'Cloud Computing', 'Project Manager', 'Marketing'];
+  difficulties = ['Easy', 'Medium', 'Hard'];
 
 
   constructor(private courseService: CoursesService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -25,7 +29,6 @@ export class CourseFormComponent implements OnInit {
     this.course = new Course();
     this.id = this.activatedRoute.snapshot.params.id;
     this.isAddMode = !this.id;
-    console.log(this.isAddMode);
     if (!this.isAddMode) {
       this.courseService.getById(+this.id).subscribe(
         (data: Course) => {
@@ -68,6 +71,5 @@ export class CourseFormComponent implements OnInit {
   changeFiles(event) {
     this.onUploadFile(event.target.files[0]);
   }
-
 
 }

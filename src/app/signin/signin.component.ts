@@ -11,6 +11,7 @@ export class SigninComponent implements OnInit {
 
   email: string;
   password: string;
+  passwordConfirm: string;
   errorMessage: string;
 
   constructor(private authService: AuthService,

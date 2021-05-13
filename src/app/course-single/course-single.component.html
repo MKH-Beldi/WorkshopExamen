@@ -14,19 +14,20 @@
             <h5 class="card-title">{{ courseChild.title }}</h5>
           </div>
           <div class="col-3">
-                <p [ngStyle]="{color: getRecommendColor()}" *ngIf="courseChild.recommend" class="btn btn-light h5" (click)="sendRecommendNotif()">recommend {{ courseChild.recommend }}</p>
-            <p *ngIf="courseChild.recommend == 0" class="btn btn-light" (click)="sendRecommendNotif()"><small>not recommend yet</small></p>
+                <p [ngStyle]="{color: getRecommendColor()}" *ngIf="courseChild.recommend && isAuthChild" class="btn btn-light h5" (click)="sendRecommendNotif()"><i class="bi bi-plus-circle-fill"></i> Recommend {{ courseChild.recommend }}</p>
+            <p *ngIf="courseChild.recommend == 0 && isAuthChild" class="btn btn-light" (click)="sendRecommendNotif()"><i class="bi bi-plus-circle"></i><small> Not recommend yet </small></p>
           </div>
         </div>
 
-        <span class="card-text ">Difficulty : {{ courseChild.difficulty }}</span>
-        <p class="card-text mt-1">{{ courseChild.summary }}</p>
-        <p class="card-text">Created by {{ courseChild.author }} (<small class="text-muted"> release date {{ courseChild.releaseDate | date }}</small> )</p>
-        <p class="card-text" *ngIf="courseChild.lastUpdated"><small>Last updated {{ courseChild.lastUpdated | date:'medium' }} </small></p>
-        <p class="card-text" *ngIf="courseChild.public">Note : this course is public</p>
-        <p class="card-text" *ngIf="!courseChild.public">Note : this course is private</p>
-        <a [routerLink]="['edit', courseChild.id]" class="btn btn-primary">Edit</a>
-        <button class="btn btn-danger ml-2" (click)="sendDeleteNotif()">Delete</button>
+        <span class="card-text "><i class="bi bi-award-fill"></i> Difficulty : {{ courseChild.difficulty }}</span>
+        <p class="card-text mt-1"><i class="bi bi-star-fill"></i> Summary : {{ courseChild.summary }}</p>
+        <p class="card-text"><i class="bi bi-people-fill"></i> Created by {{ courseChild.author }} (<small class="text-muted"> release date {{ courseChild.releaseDate | date }}</small> )</p>
+        <p class="card-text" *ngIf="courseChild.lastUpdated"><small><i class="bi bi-calendar-check-fill"></i> Last updated {{ courseChild.lastUpdated | date:'medium' }} </small></p>
+        <p class="card-text" *ngIf="courseChild.public"><i class="bi bi-tag"></i> Note : this course is public</p>
+        <p class="card-text" *ngIf="!courseChild.public"><i class="bi bi-tag"></i> Note : this course is private</p>
+
+        <a [routerLink]="['edit', courseChild.id]" class="btn btn-primary p-2" *ngIf="isAuthChild"><i class="bi bi-pencil-square"></i> Edit</a>
+        <button class="btn btn-danger p-2 m-2" (click)="sendDeleteNotif()" *ngIf="isAuthChild"><i class="bi bi-trash-fill"></i> Delete</button>
       </div>
     </div>
   </div>

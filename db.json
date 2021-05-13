@@ -6,12 +6,12 @@
       "summary": "are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
       "author": "Emily Reese",
       "releaseDate": "2020-01-10",
-      "lastUpdated": "2021-05-10T23:12:51.170Z",
-      "difficulty": "Hard",
-      "recommend": 7,
+      "lastUpdated": "2021-05-13T03:32:17.670Z",
+      "difficulty": "Medium",
+      "recommend": 11,
       "public": false,
       "id": 1,
-      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F16206883693231_eTuCOcn_u09KDIkEKoOhZQ.jpeg?alt=media&token=5a3f064b-6729-4308-af8a-2f5b681558c8"
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F16207511484901_eTuCOcn_u09KDIkEKoOhZQ.jpeg?alt=media&token=1a09f017-1cd4-4fa6-be6b-3810a86bf023"
     },
     {
       "category": "Cloud Computing",
@@ -57,7 +57,7 @@
       "author": "Olga Volkova",
       "releaseDate": "1991-01-01",
       "difficulty": "Medium",
-      "recommend": 12,
+      "recommend": 13,
       "id": 6,
       "lastUpdated": "2021-05-10T20:37:19.495Z",
       "public": true
@@ -82,7 +82,7 @@
       "recommend": 0,
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620686431644python-definition.jpg?alt=media&token=deadd9e9-b102-4f74-b0e3-aff678452208",
       "id": 8,
-      "lastUpdated": "2021-05-10T22:40:33.902Z",
+      "lastUpdated": "2021-05-12T23:29:44.240Z",
       "public": true
     },
     {

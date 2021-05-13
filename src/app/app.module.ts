@@ -17,6 +17,9 @@ import { CourseSingleViewComponent } from './course-single-view/course-single-vi
 import { MultiSearchComponent } from './multi-search/multi-search.component';
 import { SearchFiltrePipe } from './pipe/search-filtre.pipe';
 import { SortByPipe } from './pipe/sort-by.pipe';
+import { FooterComponent } from './footer/footer.component';
+import { ValidateEqualModule } from 'ng-validate-equal';
+
 
 
 @NgModule({
@@ -33,12 +36,14 @@ import { SortByPipe } from './pipe/sort-by.pipe';
     MultiSearchComponent,
     SearchFiltrePipe,
     SortByPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ValidateEqualModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]

@@ -57,7 +57,6 @@ export class CoursesService {
           },
           () => {
             const downloadURL = upload.snapshot.ref.getDownloadURL();
-            console.log(downloadURL);
             resolve(downloadURL);
           }
         );

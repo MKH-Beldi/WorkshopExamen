@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import firebase from '@firebase/app';
 import '@firebase/auth';
 
@@ -7,7 +7,8 @@ import '@firebase/auth';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor() {
+  }
 
   createNewUser(email: string, password: string) {
     return new Promise(
@@ -41,5 +42,21 @@ export class AuthService {
 
   signOut() {
     firebase.auth().signOut();
+  }
+
+  isAuth() {
+    return new Promise(
+      (resolve) => {
+        firebase.auth().onAuthStateChanged(
+          (user) => {
+            if (user) {
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          }
+        );
+      }
+    );
   }
 }

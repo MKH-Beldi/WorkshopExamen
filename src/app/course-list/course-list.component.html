@@ -1,58 +1,83 @@
 <div class="container mt-3 mb-3">
-  <div class="form-group row mb-4 d-flex justify-content-center">
-    <label class="form-check-label text-lg-left btn btn-warning" style="cursor: unset">Search</label>
-    <div class="col-sm-8">
+
+  <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+    <div class="p-2 bd-highlight">
+      <label class="col-form-label text-lg-left btn btn-success bi-search" style="cursor: unset"> Search</label>
+    </div>
+
+
+
+    <div class="p-2 w-50 bd-highlight">
       <input class="form-control" type="text" placeholder="   Enter course, author or keywords . . ." id="search"
              [(ngModel)]="searchValue">
     </div>
   </div>
-  <div class="row">
-    <label class="form-check-label mr-3 text-lg-left btn btn-danger" style="cursor: unset">Filtre</label>
-    <select class="form-select btn btn-outline-success" aria-label="Category"
-            name="filtreByCategory"
-            [(ngModel)]="filtreByCategory"
-            (change)="onFiltreByCategory()">
-      <option [ngValue]="'none'" selected>Category</option>
-      <option *ngFor="let category of categories" [ngValue]="category">{{ category}}</option>
-    </select>
 
-    <select class="form-select btn btn-outline-info ml-2" aria-label="Difficulty"
-            name="filtreByDifficulty"
-            [(ngModel)]="filtreByDifficulty"
-            (change)="onFiltreByDifficulty()">
-      <option [ngValue]="'none'" selected>Difficulty</option>
-      <option *ngFor="let difficulty of difficultys" [ngValue]="difficulty">{{ difficulty }}</option>
-    </select>
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2">
+      <label class="form-check-label text-lg-left btn btn-danger" style="cursor: unset"><i class="bi bi-filter"></i> Filtre</label>
+    </div>
+    <div class="p-2">
+      <select class="form-select btn btn-outline-success" aria-label="Category"
+              name="filtreByCategory"
+              [(ngModel)]="filtreByCategory"
+              (change)="onFiltreByCategory()">
+        <option [ngValue]="'none'" selected>Category</option>
+        <option *ngFor="let category of categories" [ngValue]="category">{{ category}}</option>
+      </select>
+    </div>
 
-    <div class="form-check ml-2 ">
-      <input type="checkbox" class="form-check-input " id="public" name="public"
-             [(ngModel)]="isPublic" style="width: 20px">
-      <label class="form-check-label" for="public">Public</label>
+    <div class="p-2">
+      <select class="form-select btn btn-outline-info" aria-label="Difficulty"
+              name="filtreByDifficulty"
+              [(ngModel)]="filtreByDifficulty"
+              (change)="onFiltreByDifficulty()">
+        <option [ngValue]="'none'" selected>Difficulty</option>
+        <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
+      </select>
+    </div>
+
+    <div class="p-2">
+      <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="public" name="public"
+               [(ngModel)]="isPublic">
+        <label class="form-check-label" for="public">Public</label>
+      </div>
     </div>
   </div>
 
-  <div class="row mt-2">
-    <label class="form-check-label mr-3 text-lg-left btn btn-dark" style="cursor: unset; width: 60.92px">Sort</label>
-    <select class="form-select btn btn-outline-primary" style="" aria-label="sortItem"
-            name="sortItem"
-            [(ngModel)]="sortValue">
-      <option [ngValue]="'none'" selected disabled>Sort By</option>
-      <option *ngFor="let object of sortItem" [ngValue]="object">{{ object | titlecase }}</option>
-    </select>
-    <div class="form-check ml-2 ">
-      <input type="checkbox" class="form-check-input " id="reverse" name="reverse"
-             [(ngModel)]="reverse" style="width: 20px">
-      <label class="form-check-label" for="reverse">Reverse</label>
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2">
+      <label class="form-check-label mr-3 text-lg-left btn btn-dark" style="cursor: unset;"><i class="bi bi-sort-down"></i> Sort</label>
+    </div>
+    <div class="p-2">
+      <select class="form-select btn btn-outline-primary" style="" aria-label="sortItem"
+              name="sortItem"
+              [(ngModel)]="sortValue">
+        <option [ngValue]="'none'" selected disabled>Sort By</option>
+        <option *ngFor="let object of sortItem" [ngValue]="object">{{ object | titlecase }}</option>
+      </select>
+    </div>
+    <div class="p-2">
+      <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="reverse" name="reverse"
+               [(ngModel)]="reverse">
+        <label class="form-check-label" for="reverse">Reverse</label>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2">
+      <a class="btn btn-success" role="button"  routerLink="new" ><i class="bi bi-plus-square"></i> Create course</a>
     </div>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <app-course-single *ngFor="let object of courses | searchFiltre: searchValue | sortBy:sortValue:reverse"
                        [courseChild]="object"
                        [isPublicChild]="isPublic"
+                       [isAuthChild]="isAuth"
                        (deleteEvent)="onDeleteCourse($event)"
                        (recommendEvent)="onRecommendCourse($event)">
     </app-course-single>
