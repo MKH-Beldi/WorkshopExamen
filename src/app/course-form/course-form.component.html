@@ -9,7 +9,7 @@
       <div class="col-sm-2">
         <select class="form-select" id="category" name="category"
                 required
-                [(ngModel)]="categoriesSelect" #c="ngModel">
+                [(ngModel)]="course.category" #c="ngModel">
           <option class="dropdown-item" disabled selected [ngValue]="undefined" *ngIf="isAddMode">Select an Option</option>
           <option *ngFor="let object of categories" [ngValue]="object">{{ object }}</option>
         </select>
@@ -113,9 +113,8 @@
       <div class="col-sm-2">
         <select class="form-select" aria-label="Default select example" id="difficulty" name="difficulty"
                 required
-                [(ngModel)]="difficultiesSelect" #d="ngModel">
-          <
-          <option class="dropdown-item" disabled selected [ngValue]="undefined">Select an Option</option>
+                [(ngModel)]="course.difficulty" #d="ngModel">
+          <option class="dropdown-item" disabled selected [ngValue]="undefined" *ngIf="isAddMode">Select an Option</option>
           <option *ngFor="let object of difficulties" [ngValue]="object">{{ object }}</option>
         </select>
 

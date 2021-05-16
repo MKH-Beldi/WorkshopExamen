@@ -46,7 +46,7 @@ export class CourseFormComponent implements OnInit {
       this.course.image = this.fileUrl;
     }
     this.courseService.addCourse(this.course).subscribe();
-    this.router.navigate(['']);
+    this.router.navigate(['/courses']);
   }
 
   editCourse() {

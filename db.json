@@ -6,10 +6,10 @@
       "summary": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500",
       "author": "Emily Reese",
       "releaseDate": "2020-01-10",
-      "lastUpdated": "2021-05-13T20:48:39.227Z",
+      "lastUpdated": "2021-05-16T19:23:31.323Z",
       "difficulty": "Medium",
       "recommend": 11,
-      "public": false,
+      "public": true,
       "id": 1,
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F16207511484901_eTuCOcn_u09KDIkEKoOhZQ.jpeg?alt=media&token=1a09f017-1cd4-4fa6-be6b-3810a86bf023"
     },
@@ -21,7 +21,7 @@
       "releaseDate": "2018-07-11",
       "lastUpdated": "2021-05-10T22:49:37.102Z",
       "difficulty": "Easy",
-      "recommend": 29,
+      "recommend": 33,
       "public": true,
       "id": 2,
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620686974262net-MVC.png?alt=media&token=b6750870-8764-4d0b-9d82-e24a8ec88c71"
@@ -32,11 +32,12 @@
       "summary": "Are you interested in making web pages? Look no further! In this course, you will learn how to use HTML5 and CSS3, the two types of code upon which all websites are based.",
       "author": "Emily Reese",
       "releaseDate": "2020-01-01",
-      "lastUpdated": "2020-01-15",
+      "lastUpdated": "2021-05-16T19:55:47.554Z",
       "difficulty": "Medium",
       "recommend": 9,
       "public": true,
-      "id": 3
+      "id": 3,
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1621194945374product-management.2e16d0ba.fill-960x540.png?alt=media&token=11755b15-9638-44ec-9322-a469dc86cce0"
     },
     {
       "category": "Development",
@@ -57,7 +58,7 @@
       "author": "Stephen Grider",
       "releaseDate": "2011-02-10",
       "difficulty": "Hard",
-      "recommend": 1,
+      "recommend": 14,
       "public": false,
       "id": 7,
       "lastUpdated": "2021-05-13T10:32:46.574Z"
@@ -72,8 +73,8 @@
       "recommend": 0,
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620686431644python-definition.jpg?alt=media&token=deadd9e9-b102-4f74-b0e3-aff678452208",
       "id": 8,
-      "lastUpdated": "2021-05-12T23:29:44.240Z",
-      "public": true
+      "lastUpdated": "2021-05-16T19:51:43.383Z",
+      "public": false
     },
     {
       "category": "Project Manager",
@@ -87,37 +88,17 @@
       "id": 9
     },
     {
-      "category": "Project Manager",
-      "title": "Organize your data in a spreadsheet",
-      "summary": "Hi, I'm Emily! I've been harnessing the power of spreadsheets for the last twenty years and have taught many others how to as well.",
-      "author": "Emily Kund",
-      "releaseDate": "2021-05-06",
-      "difficulty": "Hard",
-      "recommend": 7,
-      "id": 10
-    },
-    {
       "category": "Marketing",
       "title": "Drive Traffic to Your Website With Search Engine Optimization (SEO)",
       "summary": "My name is Mike, and I am a digital marketer and SEO consultant for OpenClassrooms. I created this course with Léo Sider, an SEO consultant based in France,",
       "author": "Emily ReeseS",
       "releaseDate": "2019-05-10",
       "difficulty": "Hard",
-      "recommend": 0,
+      "recommend": 1,
       "id": 11,
       "public": true,
       "lastUpdated": "2021-05-10T23:04:50.068Z",
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620687437592t%C3%A9l%C3%A9chargement%20(1).png?alt=media&token=6bb17002-1032-4c02-ac3b-ade397afa57d"
-    },
-    {
-      "category": "Marketing",
-      "title": "Manage Your Customer Relationships With CRM",
-      "summary": "CRM (or customer relationship management) is much more than just another three-letter acronym. It’s the lifeblood of your business",
-      "author": "Emily Reese",
-      "releaseDate": "2010-05-25",
-      "difficulty": "Medium",
-      "recommend": 0,
-      "id": 12
     },
     {
       "category": "Marketing",
@@ -127,20 +108,32 @@
       "releaseDate": "2012-03-01",
       "difficulty": "Medium",
       "public": true,
-      "recommend": 1,
+      "recommend": 14,
       "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620687851437crm-definition.jpg?alt=media&token=e05aca84-0d2b-405a-a855-9b9887e82951",
       "id": 13,
       "lastUpdated": "2021-05-10T23:04:13.191Z"
     },
     {
-      "title": "Le Lorem Ipsum en conte",
-      "summary": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique infor",
-      "author": "Lorem title",
-      "releaseDate": "2005-02-21",
-      "public": false,
+      "category": "Cloud Computing",
+      "title": "Docker",
+      "summary": "console.log(this.course.category);\n    console.log(this.course.difficulty);",
+      "releaseDate": "2021-05-11",
+      "author": "Beldi Khalil",
+      "recommend": 1,
+      "id": 14,
+      "difficulty": "Medium",
+      "lastUpdated": "2021-05-16T19:50:47.141Z"
+    },
+    {
+      "category": "Project Manager",
+      "title": "Project Management 101",
+      "summary": "An important part of being a product manager is overseeing the progress of the team and making decisions to ensure maximum value. It's essential to understand the basics of project management",
+      "author": "Test Author",
+      "releaseDate": "2020-08-20",
+      "difficulty": "Easy",
       "recommend": 0,
-      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1620902048290net-MVC.png?alt=media&token=b7cf32fb-9ae9-49a1-a463-e381e725e264",
-      "id": 14
+      "image": "https://firebasestorage.googleapis.com/v0/b/examen-af1c3.appspot.com/o/images%2F1621195198745project-management-101-3-.png?alt=media&token=769fa1c0-c816-46f0-843d-d751b745ea67",
+      "id": 15
     }
   ]
 }
