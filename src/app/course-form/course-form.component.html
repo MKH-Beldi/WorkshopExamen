@@ -1,6 +1,7 @@
 <div class="container mt-3">
 
-  <h2 class="mb-3"><i class="bi bi-plus-circle-fill"></i> Create new Course</h2>
+  <h2 class="mb-3" *ngIf="isAddMode"><i class="bi bi-plus-circle-fill"></i> Create new Course</h2>
+  <h2 class="mb-3" *ngIf="!isAddMode"><i class="bi bi-pencil-square"></i> Edit Course</h2>
 
   <form #f="ngForm">
     <div class="mb-3 row">
@@ -150,7 +151,7 @@
 
     <div class="mt-3">
       <button type="button" class="btn btn-success" (click)="addCourse()"
-              [disabled]="f.invalid"
+              [disabled]="f.invalid || fileIsUploading"
               *ngIf="isAddMode"><i class="bi bi-plus-square"></i> Save Course
       </button>
       <button type="button" class="btn btn-success" (click)="editCourse()"
